@@ -28,4 +28,8 @@
     .forecast-container {
         gap: 0.5rem;
     }
+
+    .forecast-display {
+        padding: 0;
+    }
 }
