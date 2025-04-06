@@ -1,0 +1,67 @@
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    padding-bottom: 10px;
+    gap: 5px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+
+input {
+    width: 600px;
+    padding: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 30px;
+    background-color: #121212;
+    color: aliceblue;
+}
+
+button {
+    padding: 1rem;
+    color: aliceblue;
+    margin-left: 10px;
+    border-radius: 70px;
+}
+
+@media (max-width: 768px) {
+    /* CSS that should be displayed if width is equal to or less than 800px goes here */
+    .search-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input {
+        width: 80%;
+        font-size: 0.9rem;
+    }
+
+    button {
+        width: 50%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .search-container {
+        gap: 10px;
+    }
+
+    input {
+        width: 90%;
+        font-size: 0.8rem;
+        padding: 0.8rem;
+    }
+
+    button {
+        width: 60%;
+        padding: 0.8rem;
+        font-size: 0.9rem;
+        margin-top: 30px;
+    }
+}

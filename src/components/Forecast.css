@@ -1,0 +1,24 @@
+
+.forecast-container {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+}
+
+.forecast-display {
+    padding: 10px;
+    line-height: 13px;
+}
+
+.forecast-display img {
+    height: 120px;
+    width: 120px;
+}
+
+@media (max-width: 1122px) {
+    /* CSS that should be displayed if width is equal to or less than 800px goes here */
+    .forecast-container {
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+}
