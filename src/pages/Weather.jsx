@@ -10,7 +10,7 @@ const Weather = () => {
     const [forecastData, setForecastData] = useState([]);
     const [city, setCity] = useState("Sydney"); //Default city
     const [hourlyForecast, setHourlyForecast] = useState([]);
-    const APIKey = "a23794a76418f62b75311d1f42164276";
+    const APIKey = import.meta.env.VITE_WEATHER_API_KEY;
 
     const fetchWeatherData = async (city) => {
 
