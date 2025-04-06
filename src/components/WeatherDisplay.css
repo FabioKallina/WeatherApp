@@ -135,6 +135,7 @@ p {
     .weather-display {
         width: 100%;
         padding: 1rem;
+        margin-left: 15px;
     }
 
     img {
@@ -142,9 +143,20 @@ p {
         height: 150px;
     }
 
+    .image h1 {
+        font-size: 1.5rem;
+    }
+
+    .fahrenheit {
+        font-size: 0.8rem;
+        margin-top: 80px;
+        margin-left: -40px;
+    }
+
     .weather-info, .weather-loc {
         width: 100%;
         text-align: center;
         padding: 5px;
+        margin-top: 10px;
     }
 }

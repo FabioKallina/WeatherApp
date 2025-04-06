@@ -22,3 +22,10 @@
         gap: 2rem;
     }
 }
+
+@media (max-width: 480px) {
+
+    .forecast-container {
+        gap: 0.5rem;
+    }
+}
