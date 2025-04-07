@@ -52,16 +52,16 @@ button {
         gap: 10px;
     }
 
-    input {
+    .search-bar input {
         width: 90%;
         font-size: 0.8rem;
         padding: 0.8rem;
     }
 
-    button {
+    .search-bar button {
         width: 60%;
         padding: 0.8rem;
         font-size: 0.9rem;
-        margin-top: 30px;
+        margin-top: 20px;
     }
 }
