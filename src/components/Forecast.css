@@ -33,4 +33,9 @@
         padding: 20px;
         margin-left: 20px;
     }
+
+    .forecast-display img {
+        height: 180px;
+        width: 180px;
+    }
 }
