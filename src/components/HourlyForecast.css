@@ -30,3 +30,9 @@
     background-color: #23BEDD;
 }
 
+
+@media (max-width: 480px) {
+    .chart-container {
+        width: 100%;
+    }
+}

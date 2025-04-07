@@ -144,13 +144,12 @@ p {
     }
 
     .image h1 {
-        font-size: 1.5rem;
-        margin-left: 10px
+        font-size: 1.2rem;
     }
 
     .fahrenheit {
         font-size: 0.8rem;
-        margin-top: 80px;
+        margin-top: 75px;
         margin-left: -40px;
     }
 
