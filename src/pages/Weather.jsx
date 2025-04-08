@@ -35,6 +35,7 @@ const Weather = () => {
             const localNow = new Date(nowUTC.getTime() + timezoneOffset * 1000);
             const localTodayStr = localNow.toISOString().split("T")[0];
             const localHourNow = localNow.getHours();
+            
 
             // Group forecast entries by local date
             const groupedByDate = {};
@@ -46,7 +47,7 @@ const Weather = () => {
                 const hour = localDate.getHours();
 
                 // Skip today's forecasts only if it's past noon
-                if (dateStr === localTodayStr && localHourNow >= 12) return;
+                if (dateStr === localTodayStr) return;
 
                 if (!groupedByDate[dateStr]) {
                     groupedByDate[dateStr] = [];
@@ -56,7 +57,7 @@ const Weather = () => {
             });
 
             // Pick the closest to 12:00 PM for each day
-            const sortedDates = Object.keys(groupedByDate).sort();
+            const sortedDates = Object.keys(groupedByDate).filter(date => date !== localTodayStr).sort();
             const dailyForecast = sortedDates.slice(0, 5).map(date => {
                 const dayEntries = groupedByDate[date];
                 return dayEntries.reduce((closest, current) =>
@@ -87,6 +88,8 @@ const Weather = () => {
             setWeatherData(null);
         }
     }
+
+    
 
     //Fetch the data for the default city when the component mounts
     useEffect(() => {
