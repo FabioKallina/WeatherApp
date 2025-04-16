@@ -9,26 +9,6 @@
     cursor: pointer;
 }
 
-.graph-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.graph-buttons button {
-    padding: 0 2px;
-    border: none;
-    background-color: #000000;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.graph-buttons button:hover {
-    background-color: #23BEDD;
-}
 
 
 @media (max-width: 480px) {

@@ -25,7 +25,11 @@ button {
     padding: 1rem;
     color: aliceblue;
     margin-left: 10px;
-    border-radius: 70px;
+    border-radius: 50px;
+}
+
+button:hover {
+    border-color: #FFBF00;
 }
 
 @media (max-width: 768px) {
