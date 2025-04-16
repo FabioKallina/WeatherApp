@@ -19,6 +19,7 @@ const WeatherDisplay = ({ weatherData }) => {
     });
 
     const localDate = new Date(utcTime + timezone * 1000).toLocaleDateString("en-US", {weekday: "long"})
+    const localMonthDay = new Date(utcTime + timezone * 1000).toLocaleDateString("en-US", {month: "short", day: "numeric"})
 
   return (
     <div className="weather-container">
@@ -40,7 +41,8 @@ const WeatherDisplay = ({ weatherData }) => {
 
         <div className="weather-loc">
             <h2>{weatherData.name}, {weatherData.sys.country}</h2>
-            <p>{ localDate }, {localTime}</p>
+            <p>{ localDate }, {localMonthDay}</p>
+            <p>{localTime}</p>
             <p>{weatherData.weather[0].main}</p>
         </div>
         </div>

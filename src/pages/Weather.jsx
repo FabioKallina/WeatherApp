@@ -47,7 +47,11 @@ const Weather = () => {
                 const hour = localDate.getHours();
 
                 // Skip today's forecasts only if it's past noon
-                if (dateStr === localTodayStr && hour < 12) return;
+                if (
+                    dateStr === localTodayStr &&
+                    localNow.getHours() >= 12 &&
+                    hour < 12
+                  ) return;
 
                 if (!groupedByDate[dateStr]) {
                     groupedByDate[dateStr] = [];
@@ -57,12 +61,10 @@ const Weather = () => {
             });
 
 
-            const dailyForecast = Object.keys(groupedByDate)
-                .filter(date => date !== localTodayStr)
-                .sort()
-                .slice(0, 5) // take the next 5 calendar days
-                .map(date => {
-                    const dayEntries = groupedByDate[date];
+            const dailyForecast = Object.entries(groupedByDate)
+                .sort(([dateA], [dateB]) => new Date(dateA) - new Date(dateB))
+                .slice(0, 5)
+                .map(([_, dayEntries]) => {
                     return dayEntries.reduce((closest, current) =>
                         current.hourDiffFromNoon < closest.hourDiffFromNoon ? current : closest
                     );

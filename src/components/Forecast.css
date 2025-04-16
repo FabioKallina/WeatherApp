@@ -1,13 +1,19 @@
 
 .forecast-container {
     display: flex;
-    gap: 4rem;
+    gap: 3rem;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .forecast-display {
     padding: 10px;
     line-height: 13px;
+    transition: transform 0.25s ease;
+}
+
+.forecast-display:hover {
+    transform: translateY(-5px);
 }
 
 .forecast-display img {
