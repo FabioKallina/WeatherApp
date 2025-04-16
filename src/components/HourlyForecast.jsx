@@ -13,21 +13,23 @@ const HourlyForecast = ({ hourlyForecast }) => {
 
     //apply conversion to the data
     const convertedData = hourlyForecast.map(item => ({
-        ...item, 
+        ...item,
         temp: convertTemp(item.temp)
     }));
 
     return (
         <div className="chart-container">
 
-            <button onClick={() => setUnit(unit === "°C" ? "°F" : "°C")} className="unit-toggle-button">
-                Show {unit === "°C" ? "°F" : "°C"}
-            </button>
+            <div className="chart-header">
+                <button onClick={() => setUnit(unit === "°C" ? "°F" : "°C")} className="unit-toggle-button">
+                    {unit === "°C" ? "°F" : "°C"}
+                </button>
+            </div>
 
             <ResponsiveContainer width="100%" height={180}>
                 <AreaChart data={convertedData} cursor="pointer">
                     <XAxis dataKey="time" />
-                    <YAxis domain={["auto", "auto"]} unit={`${unit}`}/>
+                    <YAxis domain={["auto", "auto"]} unit={`${unit}`} />
                     <Tooltip cursor={false} formatter={(value) => [`${value.toFixed(1)}`, 'Temp']} />
                     <Area type="linear" dataKey="temp" unit={`${unit}`} stroke="#FFBF00" strokeWidth={3} fill="#FFBF00" fillOpacity={0.3} />
                 </AreaChart>
