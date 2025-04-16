@@ -26,7 +26,7 @@ const HourlyForecast = ({ hourlyForecast }) => {
                 </button>
             </div>
 
-            <ResponsiveContainer width="100%" height={180}>
+            <ResponsiveContainer width="100%" height={200}>
                 <AreaChart data={convertedData} cursor="pointer">
                     <XAxis dataKey="time" />
                     <YAxis domain={["auto", "auto"]} unit={`${unit}`} />

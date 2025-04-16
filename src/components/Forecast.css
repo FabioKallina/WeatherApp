@@ -3,12 +3,11 @@
     display: flex;
     gap: 3rem;
     justify-content: center;
-    margin-top: 10px;
 }
 
 .forecast-display {
     padding: 10px;
-    line-height: 13px;
+    line-height: 19px;
     transition: transform 0.25s ease;
 }
 

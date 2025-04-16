@@ -3,6 +3,7 @@
     margin: auto;
     text-align: center;
     cursor: pointer;
+    margin-top: -5px;
 }
 
 .recharts-wrapper {
@@ -18,7 +19,7 @@
 .unit-toggle-button {
     background-color: #333;
     border-radius: 70px;
-    padding: 8px 12px;
+    padding: 8px 16px;
     margin-bottom: -10px;
     cursor: pointer;
     font-weight: bold;
