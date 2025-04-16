@@ -35,7 +35,7 @@ const Weather = () => {
             const localNow = new Date(nowUTC.getTime() + timezoneOffset * 1000);
             const localTodayStr = localNow.toISOString().split("T")[0];
             const localHourNow = localNow.getHours();
-            
+
 
             // Group forecast entries by local date
             const groupedByDate = {};
@@ -47,7 +47,7 @@ const Weather = () => {
                 const hour = localDate.getHours();
 
                 // Skip today's forecasts only if it's past noon
-                if (dateStr === localTodayStr) return;
+                if (dateStr === localTodayStr && hour < 12) return;
 
                 if (!groupedByDate[dateStr]) {
                     groupedByDate[dateStr] = [];
@@ -56,14 +56,18 @@ const Weather = () => {
                 groupedByDate[dateStr].push({ ...item, hourDiffFromNoon: Math.abs(12 - hour) });
             });
 
-            // Pick the closest to 12:00 PM for each day
-            const sortedDates = Object.keys(groupedByDate).filter(date => date !== localTodayStr).sort();
-            const dailyForecast = sortedDates.slice(0, 5).map(date => {
-                const dayEntries = groupedByDate[date];
-                return dayEntries.reduce((closest, current) =>
-                    current.hourDiffFromNoon < closest.hourDiffFromNoon ? current : closest
-                );
-            });
+
+            const dailyForecast = Object.keys(groupedByDate)
+                .filter(date => date !== localTodayStr)
+                .sort()
+                .slice(0, 5) // take the next 5 calendar days
+                .map(date => {
+                    const dayEntries = groupedByDate[date];
+                    return dayEntries.reduce((closest, current) =>
+                        current.hourDiffFromNoon < closest.hourDiffFromNoon ? current : closest
+                    );
+                });
+
 
             setForecastData(dailyForecast);
 
@@ -89,7 +93,7 @@ const Weather = () => {
         }
     }
 
-    
+
 
     //Fetch the data for the default city when the component mounts
     useEffect(() => {
