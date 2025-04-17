@@ -10,11 +10,13 @@ const Weather = () => {
     const [forecastData, setForecastData] = useState([]);
     const [city, setCity] = useState("Sydney"); //Default city
     const [hourlyForecast, setHourlyForecast] = useState([]);
+    const [error, setError] = useState("");
     const APIKey = import.meta.env.VITE_WEATHER_API_KEY;
 
     const fetchWeatherData = async (city) => {
 
         try {
+            setError("");
             const weatherResponse = await fetch(
                 `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}&units=metric`
             )
@@ -51,7 +53,7 @@ const Weather = () => {
                     dateStr === localTodayStr &&
                     localNow.getHours() >= 12 &&
                     hour < 12
-                  ) return;
+                ) return;
 
                 if (!groupedByDate[dateStr]) {
                     groupedByDate[dateStr] = [];
@@ -90,8 +92,10 @@ const Weather = () => {
 
         }
         catch (error) {
-            console.error("Failed fetching Weather Data:", error);
+            setError(error.message);
             setWeatherData(null);
+            setForecastData([]);
+            setHourlyForecast([]);
         }
     }
 
@@ -112,8 +116,9 @@ const Weather = () => {
     return (
         <>
             <SearchBar onSearch={handleSearch} />
+            {error && <p style={{ color: "red", fontWeight: "bold", textAlign: "center", fontSize: "2rem" }}>{error}, try searching again...</p>}
             {weatherData && <WeatherDisplay weatherData={weatherData} />}
-            {hourlyForecast && <HourlyForecast hourlyForecast={hourlyForecast} />}
+            {!error && hourlyForecast && <HourlyForecast hourlyForecast={hourlyForecast} />}
             {forecastData && <Forecast forecastData={forecastData} />}
         </>
     );
