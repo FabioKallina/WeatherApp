@@ -118,7 +118,7 @@ const Weather = () => {
             <SearchBar onSearch={handleSearch} />
             {error && <p style={{ color: "red", fontWeight: "bold", textAlign: "center", fontSize: "2rem" }}>{error}, try searching again...</p>}
             {weatherData && <WeatherDisplay weatherData={weatherData} />}
-            {!error && hourlyForecast && <HourlyForecast hourlyForecast={hourlyForecast} />}
+            {!error && hourlyForecast && <HourlyForecast hourlyForecast={hourlyForecast} weatherData={weatherData} />}
             {forecastData && <Forecast forecastData={forecastData} />}
         </>
     );

@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import "./HourlyForecast.css"
+import CompassCard from './CompassCard';
 
 import {
     XAxis, YAxis, Tooltip, ResponsiveContainer, Area, AreaChart, RadialBarChart, RadialBar, PolarAngleAxis, BarChart,
     Bar,
 } from "recharts";
 
-const HourlyForecast = ({ hourlyForecast }) => {
+const HourlyForecast = ({ hourlyForecast, weatherData }) => {
     const [unit, setUnit] = useState("°C");
     const [selectedGraph, setSelectedGraph] = useState("temp");
 
@@ -26,6 +27,11 @@ const HourlyForecast = ({ hourlyForecast }) => {
         wind: item.wind,
         fill: "#039c31",
     }))
+
+    const compassData = {
+        speed: weatherData?.wind?.speed ? weatherData.wind.speed * 3.6 : 0, //m/s to km/h
+        direction: weatherData?.wind?.deg || 0, //in degrees, North = 0
+    }
 
     return (
         <div className="chart-container">
@@ -61,24 +67,7 @@ const HourlyForecast = ({ hourlyForecast }) => {
 
             <ResponsiveContainer width="100%" height={300}>
                 {selectedGraph === "wind" ? (
-                    <RadialBarChart
-                        cx="50%"
-                        cy="50%"
-                        innerRadius="20%"
-                        outerRadius="90%"
-                        barSize={10}
-                        data={windData}
-                    >
-                        <PolarAngleAxis type="number" domain={[0, 'auto']} />
-                        <RadialBar
-                            minAngle={15}
-                            label={({ payload }) => payload?.name || ""}
-                            background
-                            clockwise
-                            dataKey="wind"
-                        />
-                        <Tooltip formatter={(value, name, props) => [`${value} km/h`, `${props.payload.name}`]} />
-                    </RadialBarChart>
+                    <CompassCard direction={compassData.direction} speed={compassData.speed} />
                 ) : selectedGraph === "precipitation" ? (
                     <BarChart data={convertedData}>
                         <XAxis dataKey="time" />
