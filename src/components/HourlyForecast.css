@@ -20,7 +20,7 @@
     background-color: #333;
     border-radius: 70px;
     padding: 8px 16px;
-    margin-bottom: -10px;
+    margin-bottom: -30px;
     cursor: pointer;
     font-weight: bold;
     transition: border-color 0.3s ease;
@@ -30,6 +30,29 @@
     border-color: #FFBF00;
 }
 
+.graph-buttons {
+    display: flex;
+    margin-left: 80px;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.graph-button {
+    background-color: black;
+    padding: 0px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.graph-button.selected {
+    border-bottom: 2px solid #FFBF00;
+  font-weight: bold;
+}
+
 
 
 @media (max-width: 480px) {
@@ -37,8 +60,34 @@
         width: 100%;
     }
 
+    .chart-header {
+        display: flex;
+        justify-content: flex-start;
+    }
+
     .unit-toggle-button {
-        margin-bottom: 0;
+        margin-bottom: 5px;
         width: auto;
+        padding: 5px 8px;
+    }
+
+    .graph-buttons {
+        display: flex;
+        margin-left: 0px;
+        gap: 5px;
+        margin-bottom: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .graph-button {
+        background-color: black;
+        padding: 0px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s;
+        font-size: 14px;
     }
 }
