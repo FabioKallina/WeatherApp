@@ -21,7 +21,7 @@ const CompassCard = ({ direction, speed }) => {
             alignItems: "center",
             color: "#fff",
         }}>
-            <svg width="450" height="250" viewBox="0 0 200 200">
+            <svg width="450" height="275" viewBox="0 0 200 200">
                 {/* Outer Circle */}
                 <circle cx="100" cy="100" r="90" stroke="#333" strokeWidth="3" fill="none" />
 
@@ -42,23 +42,6 @@ const CompassCard = ({ direction, speed }) => {
                             stroke="#777"
                             strokeWidth={i % 3 === 0 ? 2 : 1}
                         />
-                    );
-                })}
-
-                {/* Cardinal Labels */}
-                {[
-                    { label: "N", angle: 0 },
-                    { label: "E", angle: 90 },
-                    { label: "S", angle: 180 },
-                    { label: "W", angle: 270 },
-                ].map(({ label, angle }) => {
-                    const rad = angle * (Math.PI / 180);
-                    const x = 100 + 90 * Math.sin(rad);
-                    const y = 100 - 90 * Math.cos(rad);
-                    return (
-                        <text key={label} x={x} y={y + 5} textAnchor="middle" fill="#fff" fontSize="16" fontWeight="bold">
-                            {label}
-                        </text>
                     );
                 })}
 
@@ -96,6 +79,23 @@ const CompassCard = ({ direction, speed }) => {
                         <circle cx="3" cy="3" r="2" fill="#FFBF00" />
                     </marker>
                 </defs>
+
+                {/* Cardinal Labels */}
+                {[
+                    { label: "N", angle: 0 },
+                    { label: "E", angle: 90 },
+                    { label: "S", angle: 180 },
+                    { label: "W", angle: 270 },
+                ].map(({ label, angle }) => {
+                    const rad = angle * (Math.PI / 180);
+                    const x = 100 + 90 * Math.sin(rad);
+                    const y = 100 - 90 * Math.cos(rad);
+                    return (
+                        <text key={label} x={x} y={y + 5} textAnchor="middle" fill="#fff" fontSize="16" fontWeight="bold">
+                            {label}
+                        </text>
+                    );
+                })}
 
                 {/* Wind speed in the center */}
                 <text x="100" y="105" textAnchor="middle" fill="#FFBF00" fontSize="16" fontWeight="bold">

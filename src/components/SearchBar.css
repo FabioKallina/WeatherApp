@@ -13,7 +13,6 @@
     width: 550px;
 }
 
-
 .input-wrapper input {
     width: 100%;
     padding: 1rem 4rem 1rem 1rem;
@@ -23,6 +22,11 @@
     background-color: black;
     border: 1px solid #333;
     color: aliceblue;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #333; /* or any color you want */
 }
 
 .input-wrapper button {
