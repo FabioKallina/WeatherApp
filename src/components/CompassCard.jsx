@@ -21,7 +21,7 @@ const CompassCard = ({ direction, speed }) => {
             alignItems: "center",
             color: "#fff",
         }}>
-            <svg width="550" height="375" viewBox="-20 -20 240 290">
+            <svg width="550" height="375" viewBox="-20 -40 240 290">
                 {/* Outer Circle */}
                 <circle cx="100" cy="100" r="90" stroke="#333" strokeWidth="3" fill="none" />
 

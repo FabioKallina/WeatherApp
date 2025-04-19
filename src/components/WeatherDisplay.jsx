@@ -34,7 +34,6 @@ const WeatherDisplay = ({ weatherData }) => {
         <div className="weather-info">
             <p><strong>Feels like: </strong>{weatherData.main.feels_like} C° | {(weatherData.main.temp * 1.8 + 32).toFixed(1)}°F</p>
             <p><strong>Humidity: </strong> {weatherData.main.humidity}%</p>
-            <p><strong>Wind Speed: </strong>{weatherData.wind.speed} km/h</p>
             <p><strong>Conditions: </strong>{weatherData.weather[0].description}</p>
             <p><strong>H: </strong> {weatherData.main.temp_max} C° | <strong>L: </strong>{weatherData.main.temp_min} C°</p>
         </div>
