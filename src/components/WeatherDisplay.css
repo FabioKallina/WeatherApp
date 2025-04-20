@@ -149,11 +149,11 @@ p {
     }
 
     .image h1 {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
 
     .fahrenheit {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         margin-top: 75px;
         margin-left: -40px;
     }
@@ -163,5 +163,6 @@ p {
         text-align: center;
         padding: 5px;
         margin-top: 10px;
+        font-size: 18px;
     }
 }

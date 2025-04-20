@@ -80,24 +80,25 @@ button:hover {
 @media (max-width: 480px) {
 
     .search-container {
+        width: 100%;
         gap: 10px;
         border: none;
     }
 
     .input-wrapper {
-        width: 90%;
-        margin-left: -20px;
+        width: 100%;
+        margin-left: -70px;
     }
 
     .input-wrapper input {
-        font-size: 0.8rem;
+        font-size: 1rem;
         padding: 0.8rem;
     }
 
     .input-wrapper button {
         width: 30%;
         right: -30px;
-        padding: 0.7rem;
+        padding: 0.8rem;
         font-size: 1rem;
     }
 }
