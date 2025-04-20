@@ -56,16 +56,18 @@
     }
 
     .forecast-container {
-        gap: 0.5rem;
+        gap: 1rem;
     }
 
     .forecast-display {
-        padding: 10px;
+        background-color: #333;
+        border-radius: 8px;
+        padding: 10px 30px;
     }
 
     .forecast-display img {
-        height: 230px;
-        width: 230px;
+        height: 200px;
+        width: 200px;
         margin-bottom: 10px;
     }
 }
