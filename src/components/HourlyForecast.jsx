@@ -73,7 +73,7 @@ const HourlyForecast = ({ hourlyForecast, weatherData }) => {
                         <XAxis dataKey="time" />
                         <YAxis domain={[0, 'auto']} tickFormatter={(value) => `${value} mm`} />
                         <Tooltip formatter={(value) => [`${value} mm`, "Precipitation"]} />
-                        <Bar dataKey="precipitation" fill="#00BFFF" radius={[4, 4, 0, 0]} />
+                        <Bar dataKey="precipitation" fill="#00a6bf" radius={[4, 4, 0, 0]} />
                     </BarChart>
                 ) : (
                     <AreaChart data={convertedData}>
