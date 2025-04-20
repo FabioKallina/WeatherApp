@@ -11,6 +11,7 @@
 .input-wrapper {
     position: relative;
     width: 550px;
+    margin-left: -40px;
 }
 
 .input-wrapper input {
@@ -18,20 +19,24 @@
     padding: 1rem 4rem 1rem 1rem;
     font-size: 1rem;
     text-transform: uppercase;
-    border-radius: 20px;
     background-color: black;
-    border: 1px solid #333;
+    border: none;
     color: aliceblue;
+    border-left: 1px solid #333;
+    border-bottom: 1px solid #333;
+    border-top: 1px solid #333;
+    border-top-left-radius: 70px;
+    border-bottom-left-radius: 70px;
 }
 
 input:focus {
     outline: none;
-    border: 1px solid #333; /* or any color you want */
+    border: 1px solid #333; 
 }
 
 .input-wrapper button {
     position: absolute;
-    right: -90px;
+    right: -170px;
     top: 50%;
     transform: translateY(-50%);
     padding: 15px;
@@ -61,10 +66,12 @@ button:hover {
     input {
         width: 80%;
         font-size: 0.9rem;
+        border-top-right-radius: 60px;
+        border-bottom-right-radius: 60px;
     }
 
     button {
-        width: 50%;
+        width: 40%;
         text-align: center;
     }
 }
@@ -88,6 +95,6 @@ button:hover {
         width: 30%;
         right: -30px;
         padding: 0.8rem;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 }
