@@ -19,7 +19,7 @@ const Forecast = ({ forecastData }) => {
 
           return (
             <div className="forecast-display" key={index}>
-              <h4>{new Date(item.dt_txt).toLocaleDateString("en-US", { weekday: "long" })}</h4>
+              <h3>{new Date(item.dt_txt).toLocaleDateString("en-US", { weekday: "long" })}</h3>
               <p>{new Date(item.dt_txt).toLocaleDateString("en-US", {month: "short", day: "numeric"})}</p>
               <img src={weatherImg} alt={condition} />
               <p><strong>{item.main.temp_max}°</strong> | {(item.main.temp * 1.8 + 32).toFixed(1)}°F</p>

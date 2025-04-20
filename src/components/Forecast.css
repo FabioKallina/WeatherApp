@@ -30,6 +30,13 @@
     width: 160px;
 }
 
+@media screen and (min-width: 1441px) {
+    /* styles for larger screens here */
+    .forecast-container {
+        gap: 7rem;
+    }
+}
+
 @media (max-width: 1122px) {
     /* CSS that should be displayed if width is equal to or less than 800px goes here */
     .forecast-container {
@@ -53,12 +60,12 @@
     }
 
     .forecast-display {
-        padding: 20px;
-        margin-left: 15px;
+        padding: 10px;
     }
 
     .forecast-display img {
-        height: 180px;
-        width: 180px;
+        height: 230px;
+        width: 230px;
+        margin-bottom: 10px;
     }
 }
