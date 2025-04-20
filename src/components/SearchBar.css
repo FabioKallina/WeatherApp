@@ -82,6 +82,7 @@ button:hover {
 
     .search-container {
         gap: 10px;
+        border: none;
     }
 
     .input-wrapper {
@@ -97,7 +98,7 @@ button:hover {
     .input-wrapper button {
         width: 30%;
         right: -30px;
-        padding: 0.8rem;
+        padding: 0.7rem;
         font-size: 1rem;
     }
 }
