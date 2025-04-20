@@ -57,6 +57,7 @@
 
     .forecast-container {
         gap: 1rem;
+        margin-left: 15px;
     }
 
     .forecast-display {
