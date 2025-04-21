@@ -62,18 +62,19 @@ button:hover {
 
     .input-wrapper {
         width: 80%;
+        margin-left: -50px;
     }
 
-    input {
+    .input-wrapper input {
         width: 80%;
         font-size: 0.9rem;
         border-top-right-radius: 60px;
         border-bottom-right-radius: 60px;
     }
 
-    button {
-        width: 40%;
-        text-align: center;
+    .input-wrapper button {
+        width: 20%;
+        right: -40px;
     }
 }
 

@@ -45,14 +45,21 @@
     }
 }
 
+@media (max-width: 768px) {
+    .forecast-heading {
+        width: 50%;
+        margin-left: 50px;
+    }
+}
+
 @media (max-width: 480px) {
 
     .forecast-heading {
         width: 70%;
         font-size: 2rem;
-        margin-left: 40px;
         text-align: center;
-        margin-top: 50px;
+        margin: 40px 0px 10px 40px;
+        border: none;
     }
 
     .forecast-container {
@@ -61,7 +68,7 @@
     }
 
     .forecast-display {
-        background-color: #333;
+        border: 1px solid #333;
         border-radius: 8px;
         padding: 10px 50px;
         margin-bottom: 5px;
