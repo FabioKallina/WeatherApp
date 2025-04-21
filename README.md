@@ -69,7 +69,16 @@ cd WeatherApp
 npm install
 ```
 
-### 3. **Run the App**
+### 3. Set up Environment Variables
+This app uses **OpenWeather** for the API. To run it locally, you need to set up your own OpenWeather APIKey.
+1. Go to https://openweathermap.org/ and **sign up** (or log in if you already have an account).
+2. On your **Profile**, go to **My API Keys** and copy your API Key.
+3. Create a `.env` and add the following value: 
+    ```ini
+   VITE_WEATHER_API_KEY=your-api-key
+   ```
+
+### 4. **Run the App**
 ```bash
 npm run dev
 ```
